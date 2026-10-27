@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mokoro Coffee House | Soweto</title>
+  <meta name="description" content="Mokoro Coffee House: fresh coffee, breakfast and light lunches in Soweto.">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="#top">Mokoro Coffee House</a>
+    <nav><a href="#menu">Menu</a><a href="#visit">Visit</a><a href="#book">Book a table</a></nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div>
+        <h1>Coffee that tastes like Sunday morning.</h1>
+        <p>We roast our beans every week and bake everything fresh before we open. Come in for breakfast, stay for lunch.</p>
+        <a class="btn" href="#book">Book a table</a>
+      </div>
+      <img src="images/hero-cup.svg" alt="Illustration of a steaming cup of coffee">
+    </section>
+
+    <section id="menu" class="wrap">
+      <h2>Our menu</h2>
+      <div class="filters" role="group" aria-label="Filter the menu">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="coffee">Coffee</button>
+        <button class="filter" data-filter="food">Food</button>
+        <button class="filter" data-filter="cold">Cold drinks</button>
+      </div>
+      <div class="menu-grid" id="menuGrid">
+        <article class="item" data-cat="coffee"><img src="images/coffee.svg" alt=""><div><h3>Flat white</h3><p>Double espresso with silky milk.</p></div><span class="price">R38</span></article>
+        <article class="item" data-cat="coffee"><img src="images/coffee.svg" alt=""><div><h3>Rooibos latte</h3><p>Rooibos, steamed milk and honey.</p></div><span class="price">R34</span></article>
+        <article class="item" data-cat="food"><img src="images/food.svg" alt=""><div><h3>Kota breakfast</h3><p>Egg, cheese, polony and chips in a quarter loaf.</p></div><span class="price">R55</span></article>
+        <article class="item" data-cat="food"><img src="images/food.svg" alt=""><div><h3>Vetkoek and mince</h3><p>Fried bread filled with spiced beef mince.</p></div><span class="price">R48</span></article>
+        <article class="item" data-cat="cold"><img src="images/cold.svg" alt=""><div><h3>Iced coffee</h3><p>Cold brew over ice with a splash of milk.</p></div><span class="price">R36</span></article>
+        <article class="item" data-cat="cold"><img src="images/cold.svg" alt=""><div><h3>Ginger lemonade</h3><p>Fresh lemon, ginger and sparkling water.</p></div><span class="price">R30</span></article>
+      </div>
+    </section>
+
+    <section id="visit" class="wrap visit">
+      <h2>Visit us</h2>
+      <dl>
+        <dt>Address</dt><dd>12 Vilakazi Street, Orlando West, Soweto</dd>
+        <dt>Monday to Friday</dt><dd>06:30 to 17:00</dd>
+        <dt>Saturday and Sunday</dt><dd>07:30 to 15:00</dd>
+        <dt>Phone</dt><dd>011 555 0123</dd>
+      </dl>
+    </section>
+
+    <section id="book" class="wrap">
+      <h2>Book a table</h2>
+      <!-- Netlify Forms: Netlify finds this form when the site is deployed -->
+      <form name="booking" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="thanks.html" id="bookForm" novalidate>
+        <input type="hidden" name="form-name" value="booking">
+        <p hidden><label>Leave this empty: <input name="bot-field"></label></p>
+        <label>Your name<input type="text" name="name" required></label>
+        <label>Email<input type="email" name="email" required></label>
+        <label>Date<input type="date" name="date" required></label>
+        <label>Number of people<input type="number" name="guests" min="1" max="12" value="2" required></label>
+        <p class="error" id="formError" role="alert"></p>
+        <button class="btn" type="submit">Send booking request</button>
+      </form>
+    </section>
+  </main>
+
+  <footer><p>&copy; <span id="year">2026</span> Mokoro Coffee House</p></footer>
+  <script src="js/script.js"></script>
+</body>
+</html>
